@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from .models import Organization
 
 # Paths that do not require the X-Organization header.
-EXEMPT_PREFIXES = ("/admin/", "/static/")
+EXEMPT_PREFIXES = ("/admin/", "/static/", "/api/organizations/")
 
 
 class OrganizationScopeMiddleware:
@@ -11,6 +11,11 @@ class OrganizationScopeMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
+        # CORS preflight (OPTIONS) requests do not carry the X-Organization
+        # header, so they must pass through to be handled by CorsMiddleware.
+        if request.method == "OPTIONS":
+            return self.get_response(request)
+
         if request.path.startswith(EXEMPT_PREFIXES):
             return self.get_response(request)
 
