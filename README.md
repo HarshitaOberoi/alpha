@@ -6,6 +6,18 @@ Built with **Django + Django REST Framework** (backend), **React + Vite** (front
 
 ---
 
+## Demo Video Walkthrough
+
+Watch the full demo — seed data, CSV import, matching suggestions, approvals, and organization switching:
+
+<video width="100%" controls>
+  <source src="Untitled design.mp4" type="video/mp4">
+</video>
+
+[Download video](Untitled design.mp4)
+
+---
+
 ## Screenshots
 
 ### Transaction matching with suggestions

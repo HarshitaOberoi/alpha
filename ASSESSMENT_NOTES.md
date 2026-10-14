@@ -5,6 +5,16 @@
 
 ---
 
+## Demo Video Walkthrough
+
+<video width="100%" controls>
+  <source src="Untitled design.mp4" type="video/mp4">
+</video>
+
+[Download video](Untitled design.mp4)
+
+---
+
 ## 1. Setup from a fresh clone
 
 ### Backend
